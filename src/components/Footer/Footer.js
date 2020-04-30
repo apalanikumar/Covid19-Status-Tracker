@@ -6,13 +6,15 @@ import './Footer.css';
 const Footer = () => {
     return (
         <div className="footer-container">
-            <Typography variant="caption" display="block" align='center'>
-                {/* Created with Care by <a href="https://github.com/apalanikumar" target="_blank" rel="noopener noreferrer">Palani Kumar A</a> */}
+            <Typography variant="caption" display="block" align='center'>                
+                {/* Created with Care by <a href="https://github.com/apalanikumar" target="_blank" rel="noopener noreferrer">Palani Kumar A</a> 
+                <a href="https://services9.arcgis.com/HwXIp55hAoiv6DE9/ArcGIS/rest/services" target="_blank" rel="noopener noreferrer">ArcGIS</a>*/}
             </Typography>
             <Typography variant="caption" display="block" align='center'>
-                Data Sources <a href="https://services9.arcgis.com/HwXIp55hAoiv6DE9/ArcGIS/rest/services" target="_blank" rel="noopener noreferrer">ArcGIS</a>
+                Data Sources 
                 &nbsp;|&nbsp;<a href="https://api.covid19india.org/" target="_blank" rel="noopener noreferrer">Covid19India</a>
-                &nbsp;|&nbsp;<a href="https://covid19.mathdro.id/api/" target="_blank" rel="noopener noreferrer">Mathdro</a>
+                &nbsp;|&nbsp;<a href="https://covid19.mathdro.id/api/" target="_blank" rel="noopener noreferrer">COVID-19 API</a> 
+                &nbsp;|&nbsp;Powered by <a href rel="noopener noreferrer">Palani Kumar A</a>
 
             </Typography>
         </div>
