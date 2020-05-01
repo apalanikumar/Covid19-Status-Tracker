@@ -1,5 +1,7 @@
 import React from 'react';
 import { Card, CardContent, Typography, Grid } from '@material-ui/core';
+import { FormRow,TableBody, TableCell, TableContainer, TableHead, TableRow, TableSortLabel, Paper, makeStyles } from '@material-ui/core';
+//import Table from 'react-bootstrap/Table'
 import CountUp from 'react-countup';
 
 import './Cards.css';
@@ -24,34 +26,30 @@ const Cards = ({ data, value, index }) => {
         <div className="card-container">
             {lastUpdated}
             <Grid container spacing={3} justify="center">
-                <Grid item component={Card} xs={3} md={3} className="card-card card-infected">
-                    <CardContent align='center' className="card-content">
-                        <Typography color="textSecondary" gutterBottom className="card-heading">Confirmed</Typography>
-                        <Typography variant="h5" className="card-curdata">
-                            <CountUp start={0} end={confirmed.value} duration={2.5} separator="," />
-                        </Typography>
-                        {deltaconfirmed > 0 ? <Delta inpCnt={deltaconfirmed} color='red' size='med' /> : null}
-                    </CardContent>
-                </Grid>
-                <Grid item component={Card} xs={3} md={3} className="card-card card-recovered">
-                    <CardContent align='center'>
-                        <Typography color="textSecondary" gutterBottom className="card-heading">Recovered</Typography>
-                        <Typography variant="h5" className="card-curdata">
-                            <CountUp start={0} end={recovered.value} duration={2.5} separator="," />
-                        </Typography>
-                        {deltarecovered > 0 ? <Delta inpCnt={deltarecovered} color='green' size='med' /> : null}
-                    </CardContent>
-                </Grid>
-                <Grid item component={Card} xs={3} md={3} className="card-card card-deaths">
-                    <CardContent align='center'>
-                        <Typography color="textSecondary" gutterBottom className="card-heading">Deaths</Typography>
-                        <Typography variant="h5" className="card-curdata">
-                            <CountUp start={0} end={deaths.value} duration={2.5} separator="," />
-                        </Typography>
-                        {deltadeaths > 0 ? <Delta inpCnt={deltadeaths} color='grey' size='med' /> : null}
-                    </CardContent>
-                </Grid>
-            </Grid>
+            <TableRow align="center" selected="" >
+                <TableCell align="center" colSpan={5} >
+                    <Typography color="textSecondary" gutterBottom className="card-card card-infected">Confirmed</Typography>
+                    <Typography variant="h5" className="card-curdata">
+                        <CountUp start={0} end={confirmed.value} duration={2.5} separator="," />
+                    </Typography>
+                    {deltaconfirmed > 0 ? <Delta inpCnt={deltaconfirmed} color='red' size='med' /> : null}
+                </TableCell>
+                <TableCell align="center" colSpan={5}>
+                    <Typography color="textSecondary" gutterBottom className="card-card card-recovered">Recovered</Typography>
+                    <Typography variant="h5" className="card-curdata">
+                        <CountUp start={0} end={recovered.value} duration={2.5} separator="," />
+                    </Typography>
+                    {deltarecovered > 0 ? <Delta inpCnt={deltarecovered} color='green' size='med' /> : null}
+                </TableCell>
+                <TableCell align="center" colSpan={5}>
+                    <Typography color="textSecondary" gutterBottom className="card-card card-deaths">Deaths</Typography>
+                    <Typography variant="h5" className="card-curdata">
+                        <CountUp start={0} end={deaths.value} duration={2.5} separator="," />
+                    </Typography>
+                    {deltadeaths > 0 ? <Delta inpCnt={deltadeaths} color='grey' size='med' /> : null}
+                </TableCell>
+            </TableRow>
+            </Grid>           
         </div>
     );
 }

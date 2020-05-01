@@ -8,12 +8,12 @@ import Delta from '../Delta/Delta';
 
 const useStyles = makeStyles((theme) => ({
     visuallyHidden: {
-        border: 0,
+        border: 1,
         clip: 'rect(0 0 0 0)',
         height: 1,
         margin: -1,
         overflow: 'hidden',
-        padding: 0,
+        padding: 1,
         position: 'absolute',
         top: 20,
         width: 1,

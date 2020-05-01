@@ -25,10 +25,10 @@ const SelectionTabs = () => {
             setData(await fetchTNData());
         }
         fetchData();
-        const fetchGraphData = async () => {
-            setGraphData(await fetchTNGraphData());
-        }
-        fetchGraphData();
+        // const fetchGraphData = async () => {
+        //     setGraphData(await fetchTNGraphData());
+        // }
+        // //fetchGraphData();
         const fetchTNTotCntData = async () => {
             setTnTotCnt(await fetchTNTotCnt());
         }
@@ -43,10 +43,10 @@ const SelectionTabs = () => {
                 setData(await fetchTNData());
             }
             fetchData();
-            const fetchGraphData = async () => {
-                setGraphData(await fetchTNGraphData());
-            }
-            fetchGraphData();
+            // const fetchGraphData = async () => {
+            //     setGraphData(await fetchTNGraphData());
+            // }
+            // fetchGraphData();
             const fetchTNTotCntData = async () => {
                 setTnTotCnt(await fetchTNTotCnt());
             }
@@ -56,26 +56,26 @@ const SelectionTabs = () => {
                 setData(await fetchIndiaData());
             }
             fetchData();
-            const fetchGraphData = async () => {
-                setGraphData(await fetchIndiaGraphData());
-            }
-            fetchGraphData();
+            // const fetchGraphData = async () => {
+            //     setGraphData(await fetchIndiaGraphData());
+            // }
+            // fetchGraphData();
         } else if (newVal === 2) {
             const fetchData = async () => {
                 setData(await fetchCntryData());
             }
             fetchData();
-            const fetchGraphData = async () => {
-                setGraphData(await fetchDailyData());
-            }
-            fetchGraphData();
+            // const fetchGraphData = async () => {
+            //     setGraphData(await fetchDailyData());
+            // }
+            // fetchGraphData();
         }
     };
 
     const handleCountryChange = async (country) => {
         const retrievedData = await fetchCntryData(country);
         setData(retrievedData);
-        setGraphData(retrievedData);
+        //setGraphData(retrievedData);
         setCountry(country);
     }
 
@@ -102,13 +102,13 @@ const SelectionTabs = () => {
             > */}
             <Cards data={tnTotCnt} value={value} index={0} />
             <DataTable value={value} index={0} data={data} />
-            <Chart value={value} index={0} graphData={graphData} />
+            {/* <Chart value={value} index={0} graphData={graphData} /> */}
             <Cards data={data} value={value} index={1} />
             <DataTable value={value} index={1} data={data} />
-            <Chart value={value} index={1} graphData={graphData} />
+            {/* <Chart value={value} index={1} graphData={graphData} /> */}
             <CountryPicker handleCountryChange={handleCountryChange} value={value} index={2} />
             <Cards data={data} value={value} index={2} />
-            <Chart value={value} index={2} graphData={graphData} country={country} />
+            {/* <Chart value={value} index={2} graphData={graphData} country={country} /> */}
             {/* </SwipeableViews> */}
         </div>
     );

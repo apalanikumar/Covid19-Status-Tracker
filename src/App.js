@@ -3,7 +3,7 @@ import { TinyButton as ScrollUpButton } from "react-scroll-up-button";
 
 import './App.css';
 import { Header, Footer, SelectionTabs } from './components';
-// import { fetchTNData } from './api';
+//import { fetchTNData } from './api';
 
 class App extends Component {
 
@@ -15,7 +15,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <Header />
+        <Header />        
         <SelectionTabs />
         <Footer />
         <ScrollUpButton />

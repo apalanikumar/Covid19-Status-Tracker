@@ -1,24 +1,42 @@
 import React from 'react';
-import { Typography } from '@material-ui/core';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
 
-import './Footer.css';
+const styles = theme => ({
+    root: {
+        ...theme.mixins.gutters(),
+        paddingTop: theme.spacing.unit * 1,
+        paddingBottom: theme.spacing.unit * 1,
+    },
+    footer: {
+        backgroundColor: theme.palette.background.paper,
+        marginTop: theme.spacing.unit * 1,
+        padding: `${theme.spacing.unit * 1}px 0`,
+    }
+});
 
-const Footer = () => {
+function Footer(props) {
+    const { classes } = props;
+
     return (
-        <div className="footer-container">
-            <Typography variant="caption" display="block" align='center'>                
-                {/* Created with Care by <a href="https://github.com/apalanikumar" target="_blank" rel="noopener noreferrer">Palani Kumar A</a> 
-                <a href="https://services9.arcgis.com/HwXIp55hAoiv6DE9/ArcGIS/rest/services" target="_blank" rel="noopener noreferrer">ArcGIS</a>*/}
-            </Typography>
-            <Typography variant="caption" display="block" align='center'>
-                Data Sources 
-                &nbsp;|&nbsp;<a href="https://api.covid19india.org/" target="_blank" rel="noopener noreferrer">Covid19India</a>
-                &nbsp;|&nbsp;<a href="https://covid19.mathdro.id/api/" target="_blank" rel="noopener noreferrer">COVID-19 API</a> 
-                &nbsp;|&nbsp;Powered by <a href rel="noopener noreferrer">Palani Kumar A</a>
-
-            </Typography>
-        </div>
+        <footer className={classes.footer}>
+            <Paper className={classes.root} elevation={1}>
+                <Typography variant="h8" component="h3" align='center'>
+                   Data Source Provided By
+                &nbsp;|&nbsp;<a href rel="noopener noreferrer">Covid19 India</a>
+                &nbsp;|&nbsp;<a href rel="noopener noreferrer">COVID-19 API</a>
+                {/* &nbsp;|&nbsp;Powered by <a href rel="noopener noreferrer">Palani Kumar A</a> */}
+        </Typography>                
+               
+            </Paper>
+        </footer>
     );
 }
 
-export default Footer;
+Footer.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(Footer);
